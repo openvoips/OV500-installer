@@ -529,13 +529,13 @@ start_installation (){
 	get_linux_distribution
 	install_prerequisties
 	get_ov500_source
-#	install_freeswitch
-#	install_kamailio_rtpproxy
+	install_freeswitch
+	install_kamailio_rtpproxy
 	install_db
 	install_gui
 	install_ov500_config
 	install_sngrep
-#	clear
+	clear
 	echo "******************************************************************************************"
 	echo "******************************************************************************************"
 	echo "******************************************************************************************"
@@ -543,7 +543,7 @@ start_installation (){
 	echo "**********           Your OV500 is installed successfully                       **********"
 	echo "                     Browse URL: http://${SERVERIPADDRESS}/portal"
 	echo "                     Username: admin"     
-	echo "                     Password: 123456"	                                      
+	echo "                     Password: Ov500@786"	                                      
 	echo ""
 	echo "                     MySQL ovswitch password:"
 	echo "                     ${OV500USER_MYSQL_PASSWORD}" 
