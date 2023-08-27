@@ -147,7 +147,11 @@ install_freeswitch(){
 	yum install -y sofia-sip-devel
 	yum install -y libavformat-devel libswscale-devel ffmpeg
 	cd /usr/local/src		
-	FSfile=$(curl -s https://files.freeswitch.org/releases/freeswitch/ | grep -oE "freeswitch-[0-9]*\.[0-9]*\.[0-9]*\.-release\.tar\.bz2" | tail -n 1) && echo Downloading $FSfile && curl https://files.freeswitch.org/freeswitch-releases/$FSfile | tar -xj && mv ${FSfile/.tar.bz2//} freeswitch
+	#FSfile=$(curl -s https://files.freeswitch.org/releases/freeswitch/ | grep -oE "freeswitch-[0-9]*\.[0-9]*\.[0-9]*\.-release\.tar\.bz2" | tail -n 1) && echo Downloading $FSfile && curl https://files.freeswitch.org/freeswitch-releases/$FSfile | tar -xj && mv ${FSfile/.tar.bz2//} freeswitch
+	
+	wget https://files.freeswitch.org/releases/freeswitch/freeswitch-1.8.1.tar.bz2
+	tar -xvjf freeswitch-1.8.1.tar.bz2
+	mv /usr/local/src/freeswitch-1.8.1  /usr/local/src/freeswitch
 	cd /usr/local/src/freeswitch
 	
 	./bootstrap.sh -j
