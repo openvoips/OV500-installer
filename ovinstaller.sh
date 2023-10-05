@@ -65,9 +65,10 @@ get_linux_distribution (){
 						echo "*** "
 						read ACCEPT
 					done
-					exit 0
+					
 			else
 					echo "Hey!!! Good"
+     					exit 0
 
 			fi
 			
