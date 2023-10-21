@@ -68,7 +68,7 @@ get_linux_distribution (){
 					
 			else
 					echo "Hey!!! Good"
-     					exit 0
+     					 
 
 			fi
 			
