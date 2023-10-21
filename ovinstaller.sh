@@ -178,7 +178,7 @@ codecs/mod_b64
 codecs/mod_g723_1
 codecs/mod_g729
 codecs/mod_h26x 
-codecs/mod_opus 
+ 
 dialplans/mod_dialplan_asterisk 
 dialplans/mod_dialplan_xml 
 endpoints/mod_loopback 
