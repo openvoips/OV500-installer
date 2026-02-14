@@ -522,8 +522,8 @@ systemctl restart mysql apache2   php7.4-fpm
 echo "===== OV500 INSTALL COMPLETE ====="
 echo "=================================="
 echo "http://${SERVER_IP}/portal"
-echo "login User Name : openvoips"
-echo "login Password  : kanand81"
+echo "login User Name : admin"
+echo "login Password  : 123456"
 echo
 echo "Database user ovuser password is ${OV500_DB_PASS} for 127.0.0.1 Host."
 
