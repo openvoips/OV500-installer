@@ -62,6 +62,7 @@ echo "===== OV500 kamailio, ov500 and cdrlog Database created ====="
 echo "===== OV500 kamailio, ov500 and cdrlog Database created =====" 
 
 echo "===== OV500 build downloading from gits =====" 
+rm -rf /usr/local/src/OV500
 cd /usr/local/src
 git clone https://github.com/openvoips/OV500.git
 cd /usr/local/src/OV500
@@ -80,6 +81,21 @@ libxml2-dev libxslt1-dev libpcre2-dev zlib1g-dev libjansson-dev \
 libhiredis-dev libevent-dev libsystemd-dev libavcodec-dev libavformat-dev \
 libavutil-dev libswscale-dev libswresample-dev libnuma-dev sngrep lua5.3
 
+
+apt update
+
+apt install -y \
+build-essential \
+autoconf \
+automake \
+libtool \
+pkg-config \
+m4 \
+gettext \
+libxml2-dev \
+uuid-dev
+
+
 apt install -y uuid-dev
 apt install -y libev-dev
 apt install -y libjson-c-dev
@@ -97,9 +113,11 @@ apt install -y   libsndfile1-dev  libshout3-dev  libopus-dev   libogg-dev   libv
 echo "===== OV500 Installing spandsp Software =====" 
 
 cd /usr/local/src/OV500/src/spandsp 
-make clean 
-chmod +x * -R 
+ 
+chmod +x * -R
+autoreconf -fi
 ./bootstrap.sh && ./configure && make -j$(nproc) && make install && ldconfig
+
 
 echo "===== OV500 Installing sofia-sip Software =====" 
 cd /usr/local/src/OV500/src/sofia-sip && chmod +x * -R && ./bootstrap.sh && ./configure && make -j$(nproc) && make install && ldconfig
